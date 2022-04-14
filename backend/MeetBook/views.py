@@ -1,5 +1,8 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from .api import check_air
 
 # Create your views here.
 def index(request):
-    return HttpResponse('hihihi')
+    check_air()
+    
+    return render(request, 'MeetBook/main.html')

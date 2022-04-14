@@ -1,3 +1,4 @@
+from asyncio import constants
 from django.db import models
 
 # Create your models here.
@@ -14,7 +15,7 @@ class User(models.Model):
     guest_point = models.IntegerField()
     
 class Genre(models.Model):
-    genre = models.CharField(max_length=10)
+    genre = models.CharField(max_length=10, null=True)
     
 class Book(models.Model):
     book_name = models.CharField(max_length=45)
@@ -22,10 +23,10 @@ class Book(models.Model):
     book_contents = models.TextField()
     book_publisher = models.CharField(max_length=45)
     isbn = models.CharField(max_length=45)
-    book_pubdate = models.DateField()
-    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+    book_pubdate = models.CharField(max_length=10, null=True)
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE, null=True)
     loan_count = models.IntegerField()
-    book_thumbnail_url = models.CharField(max_length=45)
+    book_thumbnail_url = models.CharField(max_length=45, null=True)
     
 class Conference(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
