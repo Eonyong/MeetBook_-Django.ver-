@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .api import check_air
+
+from .api import check_book
+check_book()
 
 # Create your views here.
 def index(request):
-    check_air()
-    
     return render(request, 'MeetBook/main.html')

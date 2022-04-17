@@ -1,5 +1,4 @@
 import json, xmltodict, requests
-from unicodedata import name
 
 from .models import Book, Genre
 
@@ -31,5 +30,3 @@ def check_book():
                  loan_count=res['loan_count'], book_thumbnail_url=res['bookImageURL'],
                  genre_id=g.id)
             b.save()
-
-check_book()
