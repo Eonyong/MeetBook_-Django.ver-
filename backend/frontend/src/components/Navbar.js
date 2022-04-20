@@ -14,7 +14,7 @@ const Navbar = () => {
 
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ backgroundColor: '#568D6C' }}>
       <Container maxWidth="xl" sx={{ paddingLeft: '0px' }}>
         <Toolbar disableGutters>
           <Box
@@ -30,14 +30,14 @@ const Navbar = () => {
             style={{ flex: 1, textAlign:'end' }}
           >
             <Button
-              color='info' variant='contained'
+              color='inherit'
               sx={{ mr:3 }} style={{ color: 'white' }}
             >
               로그인
             </Button>
             <Button
               color='inherit' variant='contained'
-              style={{ color: 'blue' }}
+              style={{ color: '#568D6C' }}
             >
               회원가입
             </Button>
