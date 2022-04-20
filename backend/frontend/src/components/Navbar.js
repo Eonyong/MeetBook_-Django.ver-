@@ -1,17 +1,7 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
-import { Button } from '@mui/material';
+import { AppBar, Button, Container, Toolbar, Box } from '@mui/material';
 
 const Navbar = () => {
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
 
   return (
     <AppBar position="static" style={{ backgroundColor: '#568D6C' }}>
@@ -21,7 +11,6 @@ const Navbar = () => {
             component="img"
             sx={{
               maxHeight: 18,
-              
             }}
             src='img/MEETBOOK.svg'
           />
