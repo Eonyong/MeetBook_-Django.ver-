@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, Button, Container, Toolbar, Box } from '@mui/material';
+import { AppBar, Button, Container, Toolbar, Box, Divider } from '@mui/material';
 
 const Navbar = () => {
 
@@ -33,6 +33,7 @@ const Navbar = () => {
           </Box>
         </Toolbar>
       </Container>
+      <Divider color='white' />
     </AppBar>
   );
 };
