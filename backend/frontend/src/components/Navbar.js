@@ -25,7 +25,7 @@ const Navbar = () => {
               </Button>
             </Link>
             
-            <Link to='/login'>
+            <Link to='/signup'>
               <Button
                 color='inherit' variant='contained' style={{ color: '#568D6C' }}
                 >
