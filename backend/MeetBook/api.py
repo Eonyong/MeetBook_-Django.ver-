@@ -14,7 +14,7 @@ def check_book():
         try:
             g = Genre.objects.get(genre=res['class_nm'])
         except Genre.DoesNotExist:
-            g = Genre(genre=res['class_nm'])
+            Genre(genre=res['class_nm'])
             g.save()
             
         try:
