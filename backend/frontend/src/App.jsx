@@ -1,13 +1,14 @@
 import './App.css';
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
 
+import { Route, Routes } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Navbar from './components/Navbar';
 import Login from './layouts/Login';
 import Signup from './layouts/Signup';
 
 function App() {
+
   return (
     <div className="App">
       <Navbar />

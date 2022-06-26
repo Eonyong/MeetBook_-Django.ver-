@@ -1,9 +1,18 @@
 import * as React from 'react';
+import indexStore from '../modules/indexStore';
+import { useObserver } from 'mobx-react';
 import { Box, Fab, Grid, IconButton, InputBase, Stack, Typography } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
 function MainLayout () {
-  return (
+
+  const { numberStore } = indexStore();
+
+  const onClickIncrease = () => {
+    numberStore.increaseAction(1);
+  };
+
+  return useObserver(() => (
     <>
       <Stack sx={{ backgroundColor: '#568D6C', height: '100%' }}>
         <Typography sx={{ color:'white', mt: 10 }}>책으로 나누는 우리 이야기</Typography>
@@ -16,7 +25,7 @@ function MainLayout () {
           <InputBase
             sx={{ alignSelf: 'center', backgroundColor:'white', borderRadius: 15 }}
             variant='filled'
-            placeholder='달러구트'
+            value={ numberStore.num > 0 ? numberStore.num : '달러구트' }
             startAdornment={<IconButton type='submit' sx={{ p: 2}}><SearchIcon /></IconButton>}
             />
         </Box>
@@ -24,7 +33,7 @@ function MainLayout () {
         <Fab
           sx={{ height: 50,
           backgroundColor:'white', alignSelf: 'center', borderRadius: 15 }}
-          variant="extended">
+          variant="extended" onClick={ onClickIncrease }>
             👋 도서별 모임 확인하기
         </Fab>
         <Grid sx={{ my:4 }}>
@@ -32,6 +41,7 @@ function MainLayout () {
         </Grid>      
       </Stack>
     </>
+    )
 
   );
 };
