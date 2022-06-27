@@ -15,11 +15,8 @@ const Login = observer(() => {
 
   const onInputHandler = e => {
     const {name, value} = e.target;
-    setUser({
-      ...user,
-      [ name ]: value,
-    });
-    userStore.inform(value);
+    if (name === 'email') userStore.login(value);
+    else console.log('no');
   }
 
   const login = (email, password) => {

@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*l&c0u=rw9e*j@evmad*)y&mh!mnddukuqe#n$qe++ym!6(%*9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://localhost:3000',
+    'http://127.0.0.1:8000']
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'MeetBook',
+    'accounts',
     'rest_framework',
     'corsheaders',
 ]

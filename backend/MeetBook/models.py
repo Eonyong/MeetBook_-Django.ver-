@@ -1,17 +1,7 @@
 from django.db import models
-
+from accounts.models import User
 # Create your models here.
-class User(models.Model):
-    name = models.CharField(max_length=45)
-    password = models.CharField(max_length=12)
-    nickname = models.CharField(max_length=45)
-    email = models.EmailField()
-    gender = models.IntegerField()
-    age = models.IntegerField()
-    profile_image = models.CharField(max_length=45)
-    profile_description = models.TextField()
-    host_point = models.IntegerField()
-    guest_point = models.IntegerField()
+
     
 class Genre(models.Model):
     genre = models.CharField(max_length=10, null=True)

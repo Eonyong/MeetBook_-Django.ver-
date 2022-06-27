@@ -15,14 +15,8 @@ const userStore = observable({
     makeAutoObservable(this);
   },
 
-  inform (email, name, nickname, gender, age, profile_image, profile_description) {
+  login(email) {
     this.email = email;
-    this.name = name;
-    this.nickname = nickname;
-    this.gender = gender;
-    this.age = age;
-    this.profile_image = profile_image;
-    this.profile_description = profile_description;
   },
 
 });
